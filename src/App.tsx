@@ -1,8 +1,9 @@
+import GearList from "./GearList"
 
 const App = () => {
   return (
     <div>
-        <h1>Merhaba</h1>
+        <GearList/>
       
     </div>
   )
