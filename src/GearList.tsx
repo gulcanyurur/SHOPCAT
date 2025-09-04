@@ -61,6 +61,13 @@ const GearList = () => {
          
           description="Yüzme için ideal gözlük"
         />
+
+        <img  src ='https://m.media-amazon.com/images/I/81gKb9zLDTL._AC_SX679_.jpg'
+        alt= 'Sırt çantası yüzme için ideal' width='130'  />
+      
+         
+         
+     
       </section>
     </div>
   );
