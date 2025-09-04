@@ -41,22 +41,22 @@ const GearList = () => {
           description="Ayak kaslarını güçlendiren palet"
         />
           <Gear
-         image="/goggles.jpg"
-          name="Gözlük"
+         image="/Denizhavlusu.jpg"
+          name="Deniz havlusu "
+         brand="Arena"
+         
+          description="Deniz havlusu"
+        />
+          <Gear
+         image="/denizterligi.jpg"
+          name="Deniz Terliği"
          brand="Arena"
          
           description="Yüzme için ideal gözlük"
         />
           <Gear
-         image="/goggles.jpg"
-          name="Gözlük"
-         brand="Arena"
-         
-          description="Yüzme için ideal gözlük"
-        />
-          <Gear
-         image="/goggles.jpg"
-          name="Gözlük"
+         image="/mayo.jpg"
+          name="Mayo"
          brand="Arena"
          
           description="Yüzme için ideal gözlük"
