@@ -30,6 +30,7 @@ const GearList = () => {
       <h1>Swimming Gear List</h1>
       <Navbar />
       <section>
+        
         <Gear
          image="/goggles.jpg"
           name="Gözlük"
