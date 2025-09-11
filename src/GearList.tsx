@@ -1,5 +1,5 @@
+import Footer from "./Footer";
 import Navbar from "./Navbar";
-
 
 
 
@@ -78,6 +78,7 @@ const GearList = () => {
          
      
       </section>
+      <Footer/>
     </div>
   );
 };
