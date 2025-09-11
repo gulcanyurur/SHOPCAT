@@ -13,7 +13,7 @@ type GearProps = {
 
 const Gear = ({ name, brand, description, image }: GearProps) => {
   return (
-    <article>
+    <article className="large">
        
       <img src={image} alt={name} width="200" />
       <h2>{name}</h2>
@@ -26,7 +26,8 @@ const Gear = ({ name, brand, description, image }: GearProps) => {
 
 const GearList = () => {
   return (
-    <div>
+  <div className="GearList">
+
       <h1>Swimming Gear List</h1>
       <Navbar />
       <section>
@@ -71,11 +72,6 @@ const GearList = () => {
          
           description="Yüzme için ideal gözlük"
         />
-
-        <img  src ='https://m.media-amazon.com/images/I/81gKb9zLDTL._AC_SX679_.jpg'
-        alt= 'Sırt çantası yüzme için ideal' width='130'  />
-      
-         
          
      
       </section>
