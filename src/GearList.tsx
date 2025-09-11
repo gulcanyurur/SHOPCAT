@@ -1,3 +1,9 @@
+import Navbar from "./Navbar";
+
+
+
+
+
 type GearProps = {
   name: string;
   brand: string;
@@ -8,11 +14,13 @@ type GearProps = {
 const Gear = ({ name, brand, description, image }: GearProps) => {
   return (
     <article>
+       
       <img src={image} alt={name} width="200" />
       <h2>{name}</h2>
       <h3>{brand}</h3>
       <p>{description}</p>
     </article>
+    
   );
 };
 
@@ -20,6 +28,7 @@ const GearList = () => {
   return (
     <div>
       <h1>Swimming Gear List</h1>
+      <Navbar />
       <section>
         <Gear
          image="/goggles.jpg"
