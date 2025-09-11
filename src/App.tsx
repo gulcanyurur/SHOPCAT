@@ -1,4 +1,4 @@
-import GearList from "./GearList"
+import GearList from "./Companents/GearList"
 
 const App = () => {
   return (

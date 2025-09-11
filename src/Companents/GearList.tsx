@@ -28,7 +28,13 @@ const GearList = () => {
   return (
   <div className="GearList">
 
-      <h1>Swimming Gear List</h1>
+      <h1>2500 TL ve Üzeri Alışverişlerde İstanbul İçi Kargo Bedava! 
+         
+      <div className="navbar-search">
+        <input type="text" placeholder="Ürün ara..." />
+        <button>🔍</button>
+      </div>
+      </h1>
       <Navbar />
       <section>
         
