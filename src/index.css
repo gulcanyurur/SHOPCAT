@@ -15,8 +15,16 @@ body {
   padding: 15px; 
 }
 .GearList  h1 {
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
   text-align: center;
+
+}
+.GearList h1 img {
+  margin-bottom: 90px;
+
 
 }
 .GearList section{
