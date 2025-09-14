@@ -10,6 +10,7 @@ type GearProps = {
 };
 
 const Gear = ({ name, brand, description, image }: GearProps) => {
+  console.log("Props:", { name, brand, description, image });
   return (
     <article className="large">
       <img src={image} alt={name} width="200" />
@@ -23,7 +24,6 @@ const Gear = ({ name, brand, description, image }: GearProps) => {
 const GearList = () => {
   return (
     <div className="GearList">
-  
       <div
         style={{
           display: "flex",
@@ -33,8 +33,15 @@ const GearList = () => {
           gap: "250px",
         }}
       >
-
-        <img src={logo} alt="ShopCat Logo" style={{ width: "170px",backgroundColor :" #f5f5f5",border:"none"}} />
+        <img
+          src={logo}
+          alt="ShopCat Logo"
+          style={{
+            width: "170px",
+            backgroundColor: " #f5f5f5",
+            border: "none",
+          }}
+        />
 
         <h1
           style={{
@@ -48,7 +55,6 @@ const GearList = () => {
           2500 TL ve Üzeri Alışverişlerde İstanbul İçi Kargo Bedava!
         </h1>
 
-        {/* Arama Barı */}
         <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
           <input
             type="text"
@@ -74,10 +80,8 @@ const GearList = () => {
         </div>
       </div>
 
-      {/* Navbar */}
       <Navbar />
 
-      {/* Ürün Listesi */}
       <section>
         <Gear
           image="/goggles.jpg"
@@ -117,12 +121,9 @@ const GearList = () => {
         />
       </section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
 };
 
 export default GearList;
-
-

@@ -1,13 +1,11 @@
 import GearList from "./Components/GearList";
 
-
 const App = () => {
   return (
     <div>
-        <GearList/>
-      
+      <GearList />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
