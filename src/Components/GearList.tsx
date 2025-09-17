@@ -1,7 +1,4 @@
-import { useState } from "react";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
-import logo from "../imagesSrc/logo.png";
+import { Link } from "react-router-dom";
 
 type GearProps = {
   name: string;
@@ -13,7 +10,15 @@ type GearProps = {
 
 const Gear = ({ name, brand, description, image, onAddToCart }: GearProps) => {
   return (
-    <article className="large" style={{ border: "1px solid #ddd", padding: "10px", margin: "10px", borderRadius: "8px" }}>
+    <article
+      className="large"
+      style={{
+        border: "1px solid #ddd",
+        padding: "10px",
+        margin: "10px",
+        borderRadius: "8px",
+      }}
+    >
       <img src={image} alt={name} width="200" />
       <h2>{name}</h2>
       <h3>{brand}</h3>
@@ -36,16 +41,18 @@ const Gear = ({ name, brand, description, image, onAddToCart }: GearProps) => {
   );
 };
 
-const GearList = () => {
-  const [cart, setCart] = useState<string[]>([]);
+type GearListProps = {
+  cart: string[];
+  setCart: React.Dispatch<React.SetStateAction<string[]>>;
+};
 
+const GearList = ({ cart, setCart }: GearListProps) => {
   const addToCart = (item: string) => {
     setCart([...cart, item]);
   };
 
   return (
     <div className="GearList">
- 
       <div
         style={{
           display: "flex",
@@ -55,62 +62,19 @@ const GearList = () => {
           gap: "250px",
         }}
       >
-        <img
-          src={logo}
-          alt="ShopCat Logo"
-          style={{
-            width: "170px",
-            backgroundColor: " #f5f5f5",
-            border: "none",
-          }}
-        />
+        <img src="/logo.png" alt="ShopCat Logo" style={{ width: "170px" }} />
 
-        <h1
-          style={{
-            margin: 0,
-            fontSize: "20px",
-            fontWeight: "bold",
-            flex: 1,
-            textAlign: "center",
-          }}
-        >
+        <h1 style={{ flex: 1, textAlign: "center", fontSize: "20px" }}>
           2500 TL ve Üzeri Alışverişlerde İstanbul İçi Kargo Bedava!
         </h1>
 
         <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-          <div>
+          <Link to="/cart" style={{ textDecoration: "none", color: "black" }}>
             🛒 Sepet: <b>{cart.length}</b> ürün
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-            <input
-              type="text"
-              placeholder="Ürün ara..."
-              style={{
-                padding: "5px 10px",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-              }}
-            />
-            <button
-              style={{
-                padding: "6px 10px",
-                border: "none",
-                background: "#e91e63",
-                color: "white",
-                borderRadius: "4px",
-                cursor: "pointer",
-              }}
-            >
-              🔍
-            </button>
-          </div>
+          </Link>
         </div>
       </div>
 
-      <Navbar />
-
- 
       <section style={{ display: "flex", flexWrap: "wrap" }}>
         <Gear
           image="/goggles.jpg"
@@ -133,30 +97,7 @@ const GearList = () => {
           description="Ayak kaslarını güçlendiren palet"
           onAddToCart={() => addToCart("Palet")}
         />
-        <Gear
-          image="/Denizhavlusu.jpg"
-          name="Deniz havlusu"
-          brand="Arena"
-          description="Deniz havlusu"
-          onAddToCart={() => addToCart("Deniz havlusu")}
-        />
-        <Gear
-          image="/denizterligi.jpg"
-          name="Deniz Terliği"
-          brand="Arena"
-          description="Rahat ve dayanıklı terlik"
-          onAddToCart={() => addToCart("Deniz Terliği")}
-        />
-        <Gear
-          image="/mayo.jpg"
-          name="Mayo"
-          brand="Arena"
-          description="Yüzme için ideal mayo"
-          onAddToCart={() => addToCart("Mayo")}
-        />
       </section>
-
-      <Footer />
     </div>
   );
 };
