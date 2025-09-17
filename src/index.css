@@ -4,38 +4,50 @@ body {
   font-family: sans-serif;
   background: #f5f5f5;
 }
-@media screen and (min-width :780px)
-{
+@media screen and (min-width: 780px) {
   .GearList {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-
-.GearList {
-  padding: 15px; 
+.large {
+  border: "1px solid #ddd";
+  padding: "10px";
+  margin: "10px";
+  border-radius: "8px";
+  width: "220px";
+  text-align: "center";
 }
-.GearList  h1 {
+.large button {
+  margin-top: "10px";
+  padding: "8px 12px";
+  background-color: "#e91e63";
+  color: "white";
+  border: "none";
+  border-radius: "4px";
+  cursor: "pointer";
+}
+.GearList {
+  padding: 15px;
+}
+.GearList h1 {
   display: flex;
   align-items: center;
   gap: 50px;
 
   text-align: center;
-
 }
 .GearList h1 img {
   margin-bottom: 90px;
-
-
 }
-.GearList section{
-    display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+.GearList section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 .GearList article {
   padding: 18px;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 }
 
@@ -46,13 +58,12 @@ body {
   border-radius: 3px;
   border-radius: 4px;
 }
-.Footer p{
+.Footer p {
   text-align: center;
-
 }
 .navbar {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   background-color: #c0117a;
   padding: 10px 20px;
@@ -81,7 +92,7 @@ body {
 }
 .navbar-search input {
   border: none;
-  padding: 8px 12px; 
+  padding: 8px 12px;
   outline: none;
   width: 200px;
   font-size: 14px;
