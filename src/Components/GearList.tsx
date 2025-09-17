@@ -67,7 +67,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
 
   return (
     <div className="GearList">
-      {/* Header */}
+
       <div
         style={{
           display: "flex",
@@ -92,8 +92,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
 
       <Navbar />
 
-      {/* Ürün Listesi */}
-      <section
+ <section
   style={{
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
@@ -101,17 +100,17 @@ const GearList = ({ cart, setCart }: GearListProps) => {
     padding: "20px",
   }}
 >
- <Gear
-  key="mama"
-  image="https://images.unsplash.com/photo-1592194996308-7b43878e84a6"
-  name="Kedi Maması"
-  brand="Royal Canin"
-  description="Yetişkin kediler için tam besleyici mama"
-  onAddToCart={() => addToCart("Kedi Maması")}
-/>
+  <Gear
+    key="mama"
+    image="/KedimMaması.jpg"
+    name="Kedi Maması"
+    brand="Royal Canin"
+    description="Yetişkin kediler için tam besleyici mama"
+    onAddToCart={() => addToCart("Kedi Maması")}
+  />
   <Gear
     key="kumu"
-    image="https://cdn.pixabay.com/photo/2016/02/19/11/19/cat-litter-1209270_1280.jpg"
+    image="/KediKumu.jpg"
     name="Kedi Kumu"
     brand="Ever Clean"
     description="Topaklanan ve kokuyu hapseden kedi kumu"
@@ -119,15 +118,15 @@ const GearList = ({ cart, setCart }: GearListProps) => {
   />
   <Gear
     key="oyuncak"
-    image="https://cdn.pixabay.com/photo/2016/01/14/20/45/cat-toy-1146350_1280.jpg"
-    name="Kedi Oyuncağı"
+    image="/KediOyuncagı.jpg"
+    name="Kedi Oyuncağı.jpg"
     brand="PetLove"
     description="Eğlenceli tüylü oyuncak"
     onAddToCart={() => addToCart("Kedi Oyuncağı")}
   />
   <Gear
     key="tirnak"
-    image="https://cdn.pixabay.com/photo/2018/07/30/23/14/cat-scratching-post-3574722_1280.jpg"
+    image="/TırmalamaTahtası.jpg"
     name="Tırmalama Tahtası"
     brand="CatTree"
     description="Kedinizin tırnak sağlığı için ideal"
@@ -135,7 +134,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
   />
   <Gear
     key="canta"
-    image="https://cdn.pixabay.com/photo/2014/04/02/14/10/pet-carrier-306435_1280.png"
+    image="/kediçantası.jpg"
     name="Taşıma Çantası"
     brand="PawSafe"
     description="Hava alan ve rahat taşıma çantası"
@@ -143,13 +142,14 @@ const GearList = ({ cart, setCart }: GearListProps) => {
   />
   <Gear
     key="yatak"
-    image="https://cdn.pixabay.com/photo/2017/03/12/16/56/cat-bed-2134749_1280.jpg"
+    image="/Kediyatagı.jpg"
     name="Kedi Yatağı"
     brand="SoftPet"
     description="Yumuşak ve rahat kedi yatağı"
     onAddToCart={() => addToCart("Kedi Yatağı")}
   />
 </section>
+
 
     </div>
   );
