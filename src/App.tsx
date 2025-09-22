@@ -11,10 +11,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Ana Sayfa - Ürünler */}
+     
         <Route path="/" element={<GearList cart={cart} setCart={setCart} />} />
 
-        {/* Sepet Sayfası */}
+
         <Route path="/cart" element={<CartPage cart={cart} />} />
       </Routes>
     </Router>

@@ -1,59 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../imagesSrc/logo.png";
 import Navbar from "./Navbar";
-
-type GearProps = {
-  name: string;
-  brand: string;
-  description: string;
-  image: string;
-  onAddToCart: () => void;
-};
-
-const Gear = ({ name, brand, description, image, onAddToCart }: GearProps) => {
-  return (
-    <article
-      style={{
-        border: "1px solid #ddd",
-        borderRadius: "8px",
-        padding: "10px",
-        textAlign: "center",
-        backgroundColor: "#fff",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-      }}
-    >
-      <img
-        src={image}
-        alt={name}
-        style={{
-          width: "100%",
-          height: "200px",
-          objectFit: "cover",
-          borderRadius: "6px",
-        }}
-      />
-      <h2 style={{ margin: "10px 0 5px" }}>{name}</h2>
-      <h3 style={{ margin: "0 0 10px", color: "#555" }}>{brand}</h3>
-      <p style={{ fontSize: "14px", color: "#666", minHeight: "40px" }}>
-        {description}
-      </p>
-      <button
-        onClick={onAddToCart}
-        style={{
-          marginTop: "10px",
-          padding: "8px 12px",
-          backgroundColor: "#e91e63",
-          color: "white",
-          border: "none",
-          borderRadius: "4px",
-          cursor: "pointer",
-        }}
-      >
-        🛒 Sepete Ekle
-      </button>
-    </article>
-  );
-};
 
 type GearListProps = {
   cart: string[];
@@ -61,98 +9,85 @@ type GearListProps = {
 };
 
 const GearList = ({ cart, setCart }: GearListProps) => {
+  const [category, setCategory] = useState("cat");
+  const [search, setSearch] = useState(""); 
+
   const addToCart = (item: string) => {
     setCart([...cart, item]);
   };
 
+  const products = [
+    { id: 1, category: "cat", image: "/KedimMaması.jpg", name: "Kedi Maması", brand: "Royal Canin", description: "Yetişkin kediler için tam besleyici mama" },
+    { id: 2, category: "cat", image: "/KediKumu.jpg", name: "Kedi Kumu", brand: "Ever Clean", description: "Topaklanan ve kokuyu hapseden kedi kumu" },
+    { id: 3, category: "cat", image: "/KediOyuncagı.jpg", name: "Kedi Oyuncağı", brand: "PetLove", description: "Eğlenceli tüylü oyuncak" },
+    { id: 4, category: "cat", image: "/TırmalamaTahtası.jpg", name: "Tırmalama Tahtası", brand: "CatTree", description: "Kedinizin tırnak sağlığı için ideal" },
+    { id: 5, category: "cat", image: "/kediçantası.jpg", name: "Taşıma Çantası", brand: "PawSafe", description: "Hava alan ve rahat taşıma çantası" },
+    { id: 6, category: "cat", image: "/Kediyatagı.jpg", name: "Kedi Yatağı", brand: "SoftPet", description: "Yumuşak ve rahat kedi yatağı" },
+    { id: 7, category: "dog", image: "/KopekMamasi.jpg", name: "Köpek Maması", brand: "ProPlan", description: "Yetişkin köpekler için mama" },
+  ];
+
+  
+  const Gear = ({ name, brand, description, image, onAddToCart }: 
+    { name: string; brand: string; description: string; image: string; onAddToCart: () => void }) => {
+    return (
+      <article className="gear-card">
+        <img src={image} alt={name} />
+        <h2>{name}</h2>
+        <h3>{brand}</h3>
+        <p>{description}</p>
+        <button onClick={onAddToCart}>🛒 Sepete Ekle</button>
+      </article>
+    );
+  };
+
+  
+  const filteredProducts = products.filter(
+    (p) =>
+      p.category === category &&
+      p.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="GearList">
+    
+      <div className="gearlist-header">
+        <img src={logo} alt="ShopCat Logo" />
+        <h1>2500 TL ve Üzeri Alışverişlerde İstanbul İçi Kargo Bedava!</h1>
 
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "10px 20px",
-          gap: "50px",
-        }}
-      >
-        <img src={logo} alt="ShopCat Logo" style={{ width: "170px" }} />
+        <div className="header-right">
+      
+          <input
+            type="text"
+            placeholder="Ürün ara..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="search-box"
+          />
 
-        <h1 style={{ flex: 1, textAlign: "center", fontSize: "20px" }}>
-          2500 TL ve Üzeri Alışverişlerde İstanbul İçi Kargo Bedava!
-        </h1>
-
-        <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-          <Link to="/cart" style={{ textDecoration: "none", color: "black" }}>
-            🛒 Sepet: <b>{cart.length}</b> ürün
-          </Link>
+          <Link to="/cart">🛒 Sepet: <b>{cart.length}</b> ürün</Link>
         </div>
       </div>
 
-      <Navbar />
+      <Navbar setCategory={setCategory} />
 
- <section
-  style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gap: "20px",
-    padding: "20px",
-  }}
->
-  <Gear
-    key="mama"
-    image="/KedimMaması.jpg"
-    name="Kedi Maması"
-    brand="Royal Canin"
-    description="Yetişkin kediler için tam besleyici mama"
-    onAddToCart={() => addToCart("Kedi Maması")}
-  />
-  <Gear
-    key="kumu"
-    image="/KediKumu.jpg"
-    name="Kedi Kumu"
-    brand="Ever Clean"
-    description="Topaklanan ve kokuyu hapseden kedi kumu"
-    onAddToCart={() => addToCart("Kedi Kumu")}
-  />
-  <Gear
-    key="oyuncak"
-    image="/KediOyuncagı.jpg"
-    name="Kedi Oyuncağı.jpg"
-    brand="PetLove"
-    description="Eğlenceli tüylü oyuncak"
-    onAddToCart={() => addToCart("Kedi Oyuncağı")}
-  />
-  <Gear
-    key="tirnak"
-    image="/TırmalamaTahtası.jpg"
-    name="Tırmalama Tahtası"
-    brand="CatTree"
-    description="Kedinizin tırnak sağlığı için ideal"
-    onAddToCart={() => addToCart("Tırmalama Tahtası")}
-  />
-  <Gear
-    key="canta"
-    image="/kediçantası.jpg"
-    name="Taşıma Çantası"
-    brand="PawSafe"
-    description="Hava alan ve rahat taşıma çantası"
-    onAddToCart={() => addToCart("Taşıma Çantası")}
-  />
-  <Gear
-    key="yatak"
-    image="/Kediyatagı.jpg"
-    name="Kedi Yatağı"
-    brand="SoftPet"
-    description="Yumuşak ve rahat kedi yatağı"
-    onAddToCart={() => addToCart("Kedi Yatağı")}
-  />
-</section>
-
-
+   
+      <section className="product-grid">
+        {filteredProducts.map((p) => (
+          <Gear
+            key={p.id}
+            image={p.image}
+            name={p.name}
+            brand={p.brand}
+            description={p.description}
+            onAddToCart={() => addToCart(p.name)}
+          />
+        ))}
+      </section>
     </div>
   );
 };
 
 export default GearList;
+
+
+
