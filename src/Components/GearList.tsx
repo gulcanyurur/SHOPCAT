@@ -2,21 +2,22 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../imagesSrc/logo.png";
 import Navbar from "./Navbar";
+import type { Product } from "../types/Product";
 
 type GearListProps = {
-  cart: string[];
-  setCart: React.Dispatch<React.SetStateAction<string[]>>;
+  cart: Product[];
+  setCart: React.Dispatch<React.SetStateAction<Product[]>>;
 };
 
 const GearList = ({ cart, setCart }: GearListProps) => {
   const [category, setCategory] = useState("cat");
-  const [search, setSearch] = useState(""); 
+  const [search, setSearch] = useState("");
 
-  const addToCart = (item: string) => {
-    setCart([...cart, item]);
+  const addToCart = (product: Product) => {
+    setCart([...cart, product]);
   };
 
-  const products = [
+  const products: Product[] = [
     { id: 1, category: "cat", image: "/KedimMaması.jpg", name: "Kedi Maması", brand: "Royal Canin", description: "Yetişkin kediler için tam besleyici mama" },
     { id: 2, category: "cat", image: "/KediKumu.jpg", name: "Kedi Kumu", brand: "Ever Clean", description: "Topaklanan ve kokuyu hapseden kedi kumu" },
     { id: 3, category: "cat", image: "/KediOyuncagı.jpg", name: "Kedi Oyuncağı", brand: "PetLove", description: "Eğlenceli tüylü oyuncak" },
@@ -26,21 +27,16 @@ const GearList = ({ cart, setCart }: GearListProps) => {
     { id: 7, category: "dog", image: "/KopekMamasi.jpg", name: "Köpek Maması", brand: "ProPlan", description: "Yetişkin köpekler için mama" },
   ];
 
-  
-  const Gear = ({ name, brand, description, image, onAddToCart }: 
-    { name: string; brand: string; description: string; image: string; onAddToCart: () => void }) => {
-    return (
-      <article className="gear-card">
-        <img src={image} alt={name} />
-        <h2>{name}</h2>
-        <h3>{brand}</h3>
-        <p>{description}</p>
-        <button onClick={onAddToCart}>🛒 Sepete Ekle</button>
-      </article>
-    );
-  };
+  const Gear = ({ product, onAddToCart }: { product: Product; onAddToCart: () => void }) => (
+    <article className="gear-card">
+      <img src={product.image} alt={product.name} />
+      <h2>{product.name}</h2>
+      <h3>{product.brand}</h3>
+      <p>{product.description}</p>
+      <button onClick={onAddToCart}>🛒 Sepete Ekle</button>
+    </article>
+  );
 
-  
   const filteredProducts = products.filter(
     (p) =>
       p.category === category &&
@@ -49,13 +45,11 @@ const GearList = ({ cart, setCart }: GearListProps) => {
 
   return (
     <div className="GearList">
-    
       <div className="gearlist-header">
         <img src={logo} alt="ShopCat Logo" />
         <h1>2500 TL ve Üzeri Alışverişlerde İstanbul İçi Kargo Bedava!</h1>
 
         <div className="header-right">
-      
           <input
             type="text"
             placeholder="Ürün ara..."
@@ -63,23 +57,18 @@ const GearList = ({ cart, setCart }: GearListProps) => {
             onChange={(e) => setSearch(e.target.value)}
             className="search-box"
           />
-
           <Link to="/cart">🛒 Sepet: <b>{cart.length}</b> ürün</Link>
         </div>
       </div>
 
       <Navbar setCategory={setCategory} />
 
-   
       <section className="product-grid">
         {filteredProducts.map((p) => (
           <Gear
             key={p.id}
-            image={p.image}
-            name={p.name}
-            brand={p.brand}
-            description={p.description}
-            onAddToCart={() => addToCart(p.name)}
+            product={p}
+            onAddToCart={() => addToCart(p)}
           />
         ))}
       </section>
@@ -88,6 +77,9 @@ const GearList = ({ cart, setCart }: GearListProps) => {
 };
 
 export default GearList;
+
+
+
 
 
 
