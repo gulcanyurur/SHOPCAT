@@ -2,7 +2,7 @@ export const dogProducts = [
   {
     id: 101,
     category: "dog",
-    image: "/KopekMamasi.jpg",
+    image: "/KopekMaması.jpg",
     name: "Köpek Maması",
     brand: "ProPlan",
     description: "Yetişkin köpekler için mama"
@@ -10,7 +10,7 @@ export const dogProducts = [
   {
     id: 102,
     category: "dog",
-    image: "/KopekOyuncagi.jpg",
+    image: "/Köpek Oyuncağı.jpg",
     name: "Köpek Oyuncağı",
     brand: "PetFun",
     description: "Dayanıklı kauçuk köpek oyuncağı"
