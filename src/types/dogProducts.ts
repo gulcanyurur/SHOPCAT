@@ -1,0 +1,34 @@
+export const dogProducts = [
+  {
+    id: 101,
+    category: "dog",
+    image: "/KopekMamasi.jpg",
+    name: "Köpek Maması",
+    brand: "ProPlan",
+    description: "Yetişkin köpekler için mama"
+  },
+  {
+    id: 102,
+    category: "dog",
+    image: "/KopekOyuncagi.jpg",
+    name: "Köpek Oyuncağı",
+    brand: "PetFun",
+    description: "Dayanıklı kauçuk köpek oyuncağı"
+  },
+  {
+    id: 103,
+    category: "dog",
+    image: "/KopekTasi.jpg",
+    name: "Taşıma Tasması",
+    brand: "DogSafe",
+    description: "Ayarlanabilir ve rahat köpek tasması"
+  },
+  {
+    id: 104,
+    category: "dog",
+    image: "/KopekYatagi.jpg",
+    name: "Köpek Yatağı",
+    brand: "SoftDog",
+    description: "Yumuşak ve konforlu köpek yatağı"
+  }
+];

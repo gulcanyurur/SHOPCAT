@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../imagesSrc/logo.png";
 import Navbar from "./Navbar";
 import type { Product } from "../types/Product";
+import { dogProducts } from "../types/dogProducts";
 
 type GearListProps = {
   cart: Product[];
@@ -24,7 +25,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
     { id: 4, category: "cat", image: "/TırmalamaTahtası.jpg", name: "Tırmalama Tahtası", brand: "CatTree", description: "Kedinizin tırnak sağlığı için ideal" },
     { id: 5, category: "cat", image: "/kediçantası.jpg", name: "Taşıma Çantası", brand: "PawSafe", description: "Hava alan ve rahat taşıma çantası" },
     { id: 6, category: "cat", image: "/Kediyatagı.jpg", name: "Kedi Yatağı", brand: "SoftPet", description: "Yumuşak ve rahat kedi yatağı" },
-    { id: 7, category: "dog", image: "/KopekMamasi.jpg", name: "Köpek Maması", brand: "ProPlan", description: "Yetişkin köpekler için mama" },
+    ...dogProducts
   ];
 
   const Gear = ({ product, onAddToCart }: { product: Product; onAddToCart: () => void }) => (
