@@ -44,12 +44,18 @@ const GearList = ({ cart, setCart }: GearListProps) => {
       p.name.toLowerCase().includes(search.toLowerCase())
   );
 
+
+  const [dark, setDark] = useState(false);
+  const toggleDark = () => {
+    setDark((prev) => !prev);
+    document.body.classList.toggle("dark-mode");
+  };
+
   return (
     <div className="GearList">
       <div className="gearlist-header">
         <img src={logo} alt="ShopCat Logo" />
         <h1>2500 TL ve Üzeri Alışverişlerde İstanbul İçi Kargo Bedava!</h1>
-
         <div className="header-right">
           <input
             type="text"
@@ -61,9 +67,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
           <Link to="/cart">🛒 Sepet: <b>{cart.length}</b> ürün</Link>
         </div>
       </div>
-
       <Navbar setCategory={setCategory} />
-
       <section className="product-grid">
         {filteredProducts.map((p) => (
           <Gear
@@ -73,6 +77,11 @@ const GearList = ({ cart, setCart }: GearListProps) => {
           />
         ))}
       </section>
+      <div style={{ width: "100%", display: "flex", justifyContent: "center", margin: "32px 0 16px 0" }}>
+        <button className="dark-toggle" onClick={toggleDark}>
+          {dark ? "☀️ Aydınlık Moda Geç" : "🌙 Karanlık Moda Geç"}
+        </button>
+      </div>
     </div>
   );
 };

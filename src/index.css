@@ -1,3 +1,53 @@
+/* DARK MODE */
+.dark-mode {
+  background: #181824 !important;
+  color: #e0e0e0 !important;
+}
+.dark-mode .navbar {
+  background: linear-gradient(90deg, #23243a 0%, #181824 100%) !important;
+  color: #e0e0e0 !important;
+}
+.dark-mode .navbar-menu button {
+  background: #23243a !important;
+  color: #e0e0e0 !important;
+}
+.dark-mode .navbar-menu button.active {
+  background: #d81b60 !important;
+  color: #fff !important;
+}
+.dark-mode .navbar-banner {
+  color: #ffd54f !important;
+}
+.dark-mode .GearList, .dark-mode .cart-page {
+  background: #23243a !important;
+  color: #e0e0e0 !important;
+}
+.dark-mode .GearList article, .dark-mode .gear-card, .dark-mode .cart-item {
+  background: #23243a !important;
+  color: #e0e0e0 !important;
+  box-shadow: 0 2px 12px rgba(40,40,60,0.18) !important;
+}
+.dark-mode .gear-card button, .dark-mode .cart-remove, .dark-mode .cart-checkout, .dark-mode .navbar-menu .dark-toggle {
+  background: #d81b60 !important;
+  color: #fff !important;
+}
+.dark-mode .search-box {
+  background: #23243a !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #d81b60 !important;
+}
+.navbar-menu .dark-toggle {
+  background: #23243a;
+  color: #ffd54f;
+  border: 1px solid #ffd54f;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.navbar-menu .dark-toggle:hover {
+  background: #ffd54f;
+  color: #23243a;
+}
 
 @media (min-width: 481px) and (max-width: 1024px) {
   .navbar {
@@ -81,7 +131,7 @@
     width: 200px;
   }
 }
-/* MOBILE RESPONSIVE */
+
 @media (max-width: 780px) {
   .navbar {
     flex-direction: column;
@@ -314,7 +364,7 @@ body {
   border-radius: 4px;
 }
 
-/* PRODUCT CARD */
+
 .gear-card {
   border: 1px solid #ddd;
   border-radius: 8px;

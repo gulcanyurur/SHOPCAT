@@ -4,13 +4,16 @@ type NavbarProps = {
   setCategory: (category: string) => void;
 };
 
+
 const Navbar = ({ setCategory }: NavbarProps) => {
-  const [active, setActive] = useState("all"); 
+  const [active, setActive] = useState("all");
 
   const handleClick = (category: string) => {
     setCategory(category);
-    setActive(category); 
+    setActive(category);
   };
+
+
 
   return (
     <nav className="navbar">
@@ -88,7 +91,6 @@ const Navbar = ({ setCategory }: NavbarProps) => {
           </button>
         </li>
       </ul>
-
       <div className="navbar-banner">
         <span>% Günlük ihtiyaçlarda sepette %15 indirim %</span>
       </div>
