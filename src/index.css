@@ -1,4 +1,4 @@
-/* DARK MODE */
+
 .dark-mode {
   background: #181824 !important;
   color: #e0e0e0 !important;
@@ -285,7 +285,7 @@ body {
   text-align: center;
 }
 
-/* NAVBAR MENU */
+
 .navbar-menu {
   list-style: none;
   display: flex;
@@ -333,7 +333,7 @@ body {
   font-size: 14px;
 }
 
-/* GEAR LIST & PRODUCT GRID */
+
 .GearList {
   padding: 15px;
 }
@@ -402,7 +402,7 @@ body {
   transition: 0.3s;
 }
 
-/* CART PAGE */
+
 .cart-page {
   padding: 20px;
 }
