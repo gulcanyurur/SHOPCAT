@@ -18,24 +18,24 @@ const CartPage = ({ cart, setCart }: CartPageProps) => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>🛒 Sepetim</h2>
+  <div className="cart-page">
+  <h2 className="cart-title">🛒 Sepetim</h2>
       {cart.length === 0 ? (
         <p>Sepetiniz boş.</p>
       ) : (
         <>
-          <ul>
+          <ul className="cart-list">
             {cart.map((item, index) => (
-              <li key={index} style={{ marginBottom: "10px" }}>
-                <img src={item.image} alt={item.name} width="60" style={{ marginRight: "10px" }} />
+              <li key={index} className="cart-item">
+                <img src={item.image} alt={item.name} className="cart-img" />
                 <b>{item.name}</b> - {item.brand}
-                <button onClick={() => handleRemove(index)} style={{ marginLeft: "10px" }}>
+                <button onClick={() => handleRemove(index)} className="cart-remove">
                   Kaldır
                 </button>
               </li>
             ))}
           </ul>
-          <button onClick={handleCheckout} style={{ marginTop: "20px" }}>
+          <button onClick={handleCheckout} className="cart-checkout">
             Satın Al
           </button>
         </>
