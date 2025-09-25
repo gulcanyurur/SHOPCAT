@@ -2,7 +2,7 @@ export const birdProducts = [
   {
     id: 201,
     category: "bird",
-    image: "/KusYemi.jpg",
+    image: "/kuşYemi.jpg",
     name: "Kuş Yemi",
     brand: "Vitakraft",
     description: "Tüm kuş türleri için vitaminli yem"
@@ -10,7 +10,7 @@ export const birdProducts = [
   {
     id: 202,
     category: "bird",
-    image: "/Kafes.jpg",
+    image: "/KuşKafesi.jpg",
     name: "Kuş Kafesi",
     brand: "Ferplast",
     description: "Dayanıklı ve geniş kuş kafesi"
@@ -26,7 +26,7 @@ export const birdProducts = [
   {
     id: 204,
     category: "bird",
-    image: "/Suluk.jpg",
+    image: "/kuşSuluk.jpg",
     name: "Kuş Suluk",
     brand: "PetWater",
     description: "Kolay temizlenebilir kuş suluk"
@@ -34,16 +34,16 @@ export const birdProducts = [
   {
     id: 205,
     category: "bird",
-    image: "/KusOyuncagi.jpg",
-    name: "Kuş Oyuncağı",
+    image: "/KuşOyuncağı.jpg",
+    name: "KuşOyuncağı",
     brand: "FunBird",
     description: "Renkli ve eğlenceli kuş oyuncağı"
   },
   {
     id: 206,
     category: "bird",
-    image: "/Kum.jpg",
-    name: "Kuş Kumu",
+    image: "/KuşKumu.jpg",
+    name: "KuşKumu",
     brand: "CleanBird",
     description: "Hijyenik ve doğal kuş kumu"
   }
