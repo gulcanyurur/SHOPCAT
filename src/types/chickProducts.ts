@@ -34,7 +34,7 @@ export const chickProducts = [
   {
     id: 605,
     category: "Civciv",
-    image: "/CivcivOyuncagi.jpg",
+    image: "/CivcivOyuncağı.jpg",
     name: "Civciv Oyuncağı",
     brand: "FunChick",
     description: "Renkli ve eğlenceli civciv oyuncağı"
@@ -42,7 +42,7 @@ export const chickProducts = [
   {
     id: 606,
     category: "Civciv",
-    image: "/CivcivAltligi.jpg",
+    image: "/CivcivAltlığı.jpg",
     name: "Civciv Altlığı",
     brand: "CleanChick",
     description: "Hijyenik ve yumuşak civciv altlığı"
