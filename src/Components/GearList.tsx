@@ -23,6 +23,16 @@ const GearList = ({ cart, setCart }: GearListProps) => {
     setCart([...cart, product]);
   };
 
+  
+  const bestsellers: Product[] = [
+    { id: 1, category: "cat", image: "/KedimMaması.jpg", name: "Kedi Maması", brand: "Royal Canin", description: "Yetişkin kediler için tam besleyici mama" },
+    { id: 7, category: "dog", image: "/KopekMaması.jpg", name: "Köpek Maması", brand: "ProPlan", description: "Yetişkin köpekler için mama" },
+    { id: 202, category: "bird", image: "/KuşKafesi.jpg", name: "Kuş Kafesi", brand: "Ferplast", description: "Dayanıklı ve geniş kuş kafesi" },
+    { id: 302, category: "fish", image: "/Akvaryum.jpg", name: "Akvaryum", brand: "AquaWorld", description: "Cam ve dayanıklı akvaryum" },
+    { id: 401, category: "horse", image: "/AtYemi.jpg", name: "At Yemi", brand: "HorseFeed", description: "Vitamin ve mineralli at yemi" },
+    { id: 501, category: "rabbit", image: "/TavsanYemi.jpg", name: "Tavşan Yemi", brand: "BunnyFood", description: "Vitaminli ve doğal tavşan yemi" },
+    { id: 601, category: "Civciv", image: "/CivcivYemi.jpg", name: "Civciv Yemi", brand: "ChickFeed", description: "Büyüme destekli civciv yemi" },
+  ];
   const products: Product[] = [
     {
       id: 1,
@@ -96,12 +106,14 @@ const GearList = ({ cart, setCart }: GearListProps) => {
     </article>
   );
 
-  const filteredProducts = products.filter((p) => {
-    if (category === "all") {
-      return p.name.toLowerCase().includes(search.toLowerCase());
-    }
-    return p.category === category && p.name.toLowerCase().includes(search.toLowerCase());
-  });
+  let filteredProducts: Product[];
+  if (category === "all") {
+    filteredProducts = products.filter((p) => p.name.toLowerCase().includes(search.toLowerCase()));
+  } else if (category === "bestseller") {
+    filteredProducts = bestsellers.filter((p) => p.name.toLowerCase().includes(search.toLowerCase()));
+  } else {
+    filteredProducts = products.filter((p) => p.category === category && p.name.toLowerCase().includes(search.toLowerCase()));
+  }
 
   const [dark, setDark] = useState(false);
   const toggleDark = () => {

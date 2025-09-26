@@ -34,7 +34,7 @@ export const horseProducts = [
   {
     id: 405,
     category: "horse",
-    image: "/AtOyuncağı.jpg",
+    image: "/AtOyuncagı.jpg",
     name: "At Oyuncağı",
     brand: "FunHorse",
     description: "Atlar için dayanıklı oyuncak"

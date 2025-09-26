@@ -2,7 +2,7 @@ export const rabbitProducts = [
   {
     id: 501,
     category: "rabbit",
-    image: "/TavşanYemi.jpg",
+    image: "/TavsanYemi.jpg",
     name: "Tavşan Yemi",
     brand: "BunnyFood",
     description: "Vitaminli ve doğal tavşan yemi"
