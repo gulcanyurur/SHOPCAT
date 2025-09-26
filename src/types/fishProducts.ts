@@ -2,7 +2,7 @@ export const fishProducts = [
   {
     id: 301,
     category: "fish",
-    image: "/BalikYemi.jpg",
+    image: "/BalıkYemi.jpg",
     name: "Balık Yemi",
     brand: "Tetra",
     description: "Tüm akvaryum balıkları için tam yem"
@@ -18,7 +18,7 @@ export const fishProducts = [
   {
     id: 303,
     category: "fish",
-    image: "/Filtre.jpg",
+    image: "/AkvaryumFiltresi.jpg",
     name: "Akvaryum Filtresi",
     brand: "Eheim",
     description: "Sessiz ve güçlü filtre"
@@ -26,7 +26,7 @@ export const fishProducts = [
   {
     id: 304,
     category: "fish",
-    image: "/Isıtıcı.jpg",
+    image: "/AkvaryumIsıtıcı.jpg",
     name: "Akvaryum Isıtıcı",
     brand: "JBL",
     description: "Otomatik sıcaklık ayarı"
@@ -34,7 +34,7 @@ export const fishProducts = [
   {
     id: 305,
     category: "fish",
-    image: "/BalikOyuncagi.jpg",
+    image: "/BalıkOyuncağı.jpg",
     name: "Balık Oyuncağı",
     brand: "FunFish",
     description: "Renkli ve eğlenceli balık oyuncağı"

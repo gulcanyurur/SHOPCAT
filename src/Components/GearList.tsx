@@ -6,6 +6,7 @@ import type { Product } from "../types/Product";
 import { dogProducts } from "../types/dogProducts";
 import { birdProducts } from "../types/birdProducts";
 import { fishProducts } from "../types/fishProducts";
+import { horseProducts } from "../types/horseProducts";
 
 type GearListProps = {
   cart: Product[];
@@ -69,9 +70,10 @@ const GearList = ({ cart, setCart }: GearListProps) => {
       brand: "SoftPet",
       description: "Yumuşak ve rahat kedi yatağı",
     },
-    ...dogProducts,
-    ...birdProducts,
-    ...fishProducts,
+  ...dogProducts,
+  ...birdProducts,
+  ...fishProducts,
+  ...horseProducts,
   ];
 
   const Gear = ({
@@ -91,10 +93,10 @@ const GearList = ({ cart, setCart }: GearListProps) => {
   );
 
   const filteredProducts = products.filter(
-    (p) =>
-      p.category === category &&
-      p.name.toLowerCase().includes(search.toLowerCase())
-  );
+  (p) =>
+    p.category === category &&
+  p.name.toLowerCase().includes(search.toLowerCase())
+);
 
   const [dark, setDark] = useState(false);
   const toggleDark = () => {
