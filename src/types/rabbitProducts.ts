@@ -2,7 +2,7 @@ export const rabbitProducts = [
   {
     id: 501,
     category: "rabbit",
-    image: "/TavsanYemi.jpg",
+    image: "/TavşanYemi.jpg",
     name: "Tavşan Yemi",
     brand: "BunnyFood",
     description: "Vitaminli ve doğal tavşan yemi"
@@ -10,7 +10,7 @@ export const rabbitProducts = [
   {
     id: 502,
     category: "rabbit",
-    image: "/TavsanKafesi.jpg",
+    image: "/TavşanKafesi.jpg",
     name: "Tavşan Kafesi",
     brand: "RabbitHome",
     description: "Geniş ve dayanıklı tavşan kafesi"
@@ -18,7 +18,7 @@ export const rabbitProducts = [
   {
     id: 503,
     category: "rabbit",
-    image: "/TavsanTasi.jpg",
+    image: "/TavşanTasması.jpg",
     name: "Tavşan Tasması",
     brand: "SafeRabbit",
     description: "Ayarlanabilir ve rahat tavşan tasması"
@@ -26,7 +26,7 @@ export const rabbitProducts = [
   {
     id: 504,
     category: "rabbit",
-    image: "/TavsanOyuncagi.jpg",
+    image: "/TavşanOyuncağı.jpg",
     name: "Tavşan Oyuncağı",
     brand: "FunRabbit",
     description: "Renkli ve eğlenceli tavşan oyuncağı"
@@ -34,7 +34,7 @@ export const rabbitProducts = [
   {
     id: 505,
     category: "rabbit",
-    image: "/TavsanTuyu.jpg",
+    image: "/TavşanTuyu.jpg",
     name: "Tavşan Tüy Tarağı",
     brand: "GroomRabbit",
     description: "Tavşanlar için özel tüy tarağı"
@@ -42,7 +42,7 @@ export const rabbitProducts = [
   {
     id: 506,
     category: "rabbit",
-    image: "/TavsanTuvaleti.jpg",
+    image: "/TavşanTuvaleti.jpg",
     name: "Tavşan Tuvaleti",
     brand: "CleanRabbit",
     description: "Kolay temizlenebilir tavşan tuvaleti"
