@@ -1,3 +1,5 @@
+
+import { useNavigate } from "react-router-dom";
 import type { Product } from "../types/Product";
 
 type CartPageProps = {
@@ -12,9 +14,9 @@ const CartPage = ({ cart, setCart }: CartPageProps) => {
     setCart(newCart);
   };
 
+  const navigate = useNavigate();
   const handleCheckout = () => {
-    alert("Satın alma başarılı!");
-    setCart([]);
+    navigate("/checkout");
   };
 
   return (
