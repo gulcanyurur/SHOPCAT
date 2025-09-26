@@ -96,11 +96,12 @@ const GearList = ({ cart, setCart }: GearListProps) => {
     </article>
   );
 
-  const filteredProducts = products.filter(
-  (p) =>
-    p.category === category &&
-  p.name.toLowerCase().includes(search.toLowerCase())
-);
+  const filteredProducts = products.filter((p) => {
+    if (category === "all") {
+      return p.name.toLowerCase().includes(search.toLowerCase());
+    }
+    return p.category === category && p.name.toLowerCase().includes(search.toLowerCase());
+  });
 
   const [dark, setDark] = useState(false);
   const toggleDark = () => {
