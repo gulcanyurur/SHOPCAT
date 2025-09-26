@@ -8,6 +8,7 @@ import { birdProducts } from "../types/birdProducts";
 import { fishProducts } from "../types/fishProducts";
 import { horseProducts } from "../types/horseProducts";
 import { rabbitProducts } from "../types/rabbitProducts";
+import { chickProducts } from "../types/chickProducts";
 
 type GearListProps = {
   cart: Product[];
@@ -76,6 +77,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
   ...fishProducts,
   ...horseProducts,
   ...rabbitProducts,
+  ...chickProducts,
   ];
 
   const Gear = ({
