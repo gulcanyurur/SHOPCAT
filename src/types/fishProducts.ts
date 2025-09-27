@@ -5,7 +5,8 @@ export const fishProducts = [
     image: "/BalıkYemi.jpg",
     name: "Balık Yemi",
     brand: "Tetra",
-    description: "Tüm akvaryum balıkları için tam yem"
+  description: "Tüm akvaryum balıkları için tam yem",
+  price: 60
   },
   {
     id: 302,
@@ -13,7 +14,8 @@ export const fishProducts = [
     image: "/Akvaryum.jpg",
     name: "Akvaryum",
     brand: "AquaWorld",
-    description: "Cam ve dayanıklı akvaryum"
+  description: "Cam ve dayanıklı akvaryum",
+  price: 1200
   },
   {
     id: 303,
@@ -21,7 +23,8 @@ export const fishProducts = [
     image: "/AkvaryumFiltresi.jpg",
     name: "Akvaryum Filtresi",
     brand: "Eheim",
-    description: "Sessiz ve güçlü filtre"
+  description: "Sessiz ve güçlü filtre",
+  price: 350
   },
   {
     id: 304,
@@ -29,7 +32,8 @@ export const fishProducts = [
     image: "/AkvaryumIsıtıcı.jpg",
     name: "Akvaryum Isıtıcı",
     brand: "JBL",
-    description: "Otomatik sıcaklık ayarı"
+  description: "Otomatik sıcaklık ayarı",
+  price: 220
   },
   {
     id: 305,
@@ -37,7 +41,8 @@ export const fishProducts = [
     image: "/BalıkOyuncağı.jpg",
     name: "Balık Oyuncağı",
     brand: "FunFish",
-    description: "Renkli ve eğlenceli balık oyuncağı"
+  description: "Renkli ve eğlenceli balık oyuncağı",
+  price: 45
   },
   {
     id: 306,
@@ -45,6 +50,7 @@ export const fishProducts = [
     image: "/DipTemizleyici.jpg",
     name: "Dip Temizleyici",
     brand: "CleanAqua",
-    description: "Akvaryum tabanı için temizlik aparatı"
+  description: "Akvaryum tabanı için temizlik aparatı",
+  price: 80
   }
 ];

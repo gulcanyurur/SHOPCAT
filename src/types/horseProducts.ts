@@ -5,7 +5,8 @@ export const horseProducts = [
     image: "/AtYemi.jpg",
     name: "At Yemi",
     brand: "HorseFeed",
-    description: "Vitamin ve mineralli at yemi"
+  description: "Vitamin ve mineralli at yemi",
+  price: 800
   },
   {
     id: 402,
@@ -13,7 +14,8 @@ export const horseProducts = [
     image: "/TımarSeti.jpg",
     name: "Tımar Seti",
     brand: "GroomPro",
-    description: "Atlar için tımar ve bakım seti"
+  description: "Atlar için tımar ve bakım seti",
+  price: 350
   },
   {
     id: 403,
@@ -21,7 +23,8 @@ export const horseProducts = [
     image: "/AtTasması.jpg",
     name: "At Tasması",
     brand: "SafeHorse",
-    description: "Dayanıklı ve ayarlanabilir at tasması"
+  description: "Dayanıklı ve ayarlanabilir at tasması",
+  price: 180
   },
   {
     id: 404,
@@ -29,7 +32,8 @@ export const horseProducts = [
     image: "/AtBaddaniyesi.jpg",
     name: "At Battaniyesi",
     brand: "WarmHorse",
-    description: "Soğuk havalar için kalın at battaniyesi"
+  description: "Soğuk havalar için kalın at battaniyesi",
+  price: 400
   },
   {
     id: 405,
@@ -37,7 +41,8 @@ export const horseProducts = [
     image: "/AtOyuncagı.jpg",
     name: "At Oyuncağı",
     brand: "FunHorse",
-    description: "Atlar için dayanıklı oyuncak"
+  description: "Atlar için dayanıklı oyuncak",
+  price: 120
   },
   {
     id: 406,
@@ -45,6 +50,7 @@ export const horseProducts = [
     image: "/AtTırnak.jpg",
     name: "Tırnak Bakım Seti",
     brand: "HoofCare",
-    description: "Atlar için tırnak bakım seti"
+  description: "Atlar için tırnak bakım seti",
+  price: 150
   }
 ];

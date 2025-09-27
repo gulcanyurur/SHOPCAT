@@ -1,4 +1,5 @@
 import Footer from "./Footer";
+import { useLocation } from "react-router-dom";
 
 import React, { useMemo, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -28,8 +29,10 @@ const steps = [
   { key: "step4", label: "Onay" },
 ] as const;
 
-export default function MultiStepCheckout() {
   const [step, setStep] = useState(0);
+  const location = useLocation();
+  // Try to get total from location state (passed from CartPage)
+  const total = location.state && location.state.total ? location.state.total : 0;
 
   const initialValues: FormValues = useMemo(
     () => ({
@@ -247,6 +250,9 @@ export default function MultiStepCheckout() {
                   <ul>
                     <li><b>Üyelik:</b> {values.isMember ? "Üye" : "Misafir"}</li>
                   </ul>
+                  <div style={{ fontWeight: 700, color: '#d81b60', fontSize: 18, marginTop: 12 }}>
+                    Ödenecek Tutar: {total} TL
+                  </div>
                 </div>
               )}
 

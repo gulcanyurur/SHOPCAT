@@ -5,7 +5,8 @@ export const chickProducts = [
     image: "/CivcivYemi.jpg",
     name: "Civciv Yemi",
     brand: "ChickFeed",
-    description: "Büyüme destekli civciv yemi"
+  description: "Büyüme destekli civciv yemi",
+  price: 150
   },
   {
     id: 602,
@@ -13,7 +14,8 @@ export const chickProducts = [
     image: "/CivcivKafesi.jpg",
     name: "Civciv Kafesi",
     brand: "ChickHome",
-    description: "Geniş ve hijyenik civciv kafesi"
+  description: "Geniş ve hijyenik civciv kafesi",
+  price: 350
   },
   {
     id: 603,
@@ -21,7 +23,8 @@ export const chickProducts = [
     image: "/CivcivIsıtıcı.jpg",
     name: "Civciv Isıtıcı",
     brand: "WarmChick",
-    description: "Otomatik sıcaklık kontrollü ısıtıcı"
+  description: "Otomatik sıcaklık kontrollü ısıtıcı",
+  price: 220
   },
   {
     id: 604,
@@ -29,7 +32,8 @@ export const chickProducts = [
     image: "/CivcivSuluk.jpg",
     name: "Civciv Suluk",
     brand: "ChickWater",
-    description: "Kolay temizlenebilir suluk"
+  description: "Kolay temizlenebilir suluk",
+  price: 40
   },
   {
     id: 605,
@@ -37,7 +41,8 @@ export const chickProducts = [
     image: "/CivcivOyuncağı.jpg",
     name: "Civciv Oyuncağı",
     brand: "FunChick",
-    description: "Renkli ve eğlenceli civciv oyuncağı"
+  description: "Renkli ve eğlenceli civciv oyuncağı",
+  price: 35
   },
   {
     id: 606,
@@ -45,6 +50,7 @@ export const chickProducts = [
     image: "/CivcivAltlığı.jpg",
     name: "Civciv Altlığı",
     brand: "CleanChick",
-    description: "Hijyenik ve yumuşak civciv altlığı"
+  description: "Hijyenik ve yumuşak civciv altlığı",
+  price: 30
   }
 ];
