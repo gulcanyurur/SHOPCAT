@@ -11,215 +11,235 @@
   align-items: center;
 }
 .dark-mode .checkout-form {
-  background: #23243a;
-  color: #e0e0e0;
-  box-shadow: 0 2px 16px rgba(40,40,60,0.18);
-}
-.checkout-form h2 {
-  color: #d81b60;
-  margin-bottom: 24px;
-  font-size: 1.4rem;
-  text-align: center;
-}
-.stepper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 32px;
-  gap: 18px;
-}
-.step {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #eee;
-  color: #d81b60;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 1.1rem;
-  border: 2px solid #d81b60;
-  transition: background 0.2s, color 0.2s;
-}
-.step.active {
-  background: linear-gradient(90deg, #d81b60 0%, #c0117a 100%);
-  color: #fff;
-  border: 2px solid #d81b60;
-  box-shadow: 0 2px 8px rgba(216, 27, 96, 0.13);
-}
-.step-label {
-  font-size: 1rem;
-  color: #c0117a;
-  margin-top: 4px;
-  text-align: center;
-}
-.form-group {
-  width: 100%;
-  margin-bottom: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.form-group label {
-  font-weight: 500;
-  margin-bottom: 4px;
-  color: #d81b60;
-}
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #d81b60;
-  border-radius: 6px;
-  font-size: 1rem;
-  background: #fafafa;
-  color: #222;
-  outline: none;
-  margin-bottom: 2px;
-  transition: border 0.2s;
-}
-.form-group input:focus,
-.form-group select:focus {
-  border-color: #c0117a;
-}
-.dark-mode .form-group input,
-.dark-mode .form-group select {
-  background: #23243a;
-  color: #e0e0e0;
-  border: 1px solid #d81b60;
-}
-.form-error {
-  color: #e91e63;
-  font-size: 0.95rem;
-  margin-top: 2px;
-}
-.form-row {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-}
-.form-row .form-group {
-  flex: 1;
-}
-.checkout-choice {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 24px;
-  justify-content: center;
-}
-.checkout-choice label {
-  color: #c0117a;
-  font-weight: 500;
-  cursor: pointer;
-}
-.checkout-form button[type="submit"] {
-  width: 100%;
-  padding: 12px 0;
-  background: linear-gradient(90deg, #d81b60 0%, #c0117a 100%);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 10px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(216, 27, 96, 0.13);
-  transition: background 0.2s;
-}
-.checkout-form button[type="submit"]:hover {
-  background: linear-gradient(90deg, #c0117a 0%, #d81b60 100%);
-}
-
-.dark-mode {
-  background: #181824 !important;
-  color: #e0e0e0 !important;
-}
-.dark-mode .navbar {
-  background: linear-gradient(90deg, #23243a 0%, #181824 100%) !important;
-  color: #e0e0e0 !important;
-}
-.dark-mode .navbar-menu button {
-  background: #23243a !important;
-  color: #e0e0e0 !important;
-}
-.dark-mode .navbar-menu button.active {
-  background: #d81b60 !important;
-  color: #fff !important;
-}
-.dark-mode .navbar-banner {
-  color: #ffd54f !important;
-}
-.dark-mode .GearList, .dark-mode .cart-page {
-  background: #23243a !important;
-  color: #e0e0e0 !important;
-}
-.dark-mode .GearList article, .dark-mode .gear-card, .dark-mode .cart-item {
-  background: #23243a !important;
-  color: #e0e0e0 !important;
-  box-shadow: 0 2px 12px rgba(40,40,60,0.18) !important;
-}
-.dark-mode .gear-card button, .dark-mode .cart-remove, .dark-mode .cart-checkout, .dark-mode .navbar-menu .dark-toggle {
-  background: #d81b60 !important;
-  color: #fff !important;
-}
-.dark-mode .search-box {
-  background: #23243a !important;
-  color: #e0e0e0 !important;
-  border: 1px solid #d81b60 !important;
-}
-.navbar-menu .dark-toggle {
-  background: #23243a;
-  color: #ffd54f;
-  border: 1px solid #ffd54f;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: background 0.2s, color 0.2s;
-}
-.navbar-menu .dark-toggle:hover {
-  background: #ffd54f;
-  color: #23243a;
-}
-
-@media (min-width: 481px) and (max-width: 1024px) {
-  .navbar {
+  /* --- SHOPCAT CHECKOUT STEPPER & FORM (INSURANCE STYLE) --- */
+  .checkout-stepper-form {
+    display: flex;
     flex-direction: row;
-    padding: 12px 16px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0px;
+    margin-top: 60px;
   }
-  .navbar-menu {
-    flex-direction: row;
-    gap: 12px;
+  .stepper-vertical {
+    background: #f8fafc;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.08);
+    padding: 30px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 210px;
+    width: 210px;
+    margin: 45px 0 45px 60px;
   }
-  .GearList {
-    padding: 18px 6px;
+  .stepper-vertical .step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+    position: relative;
   }
-  .GearList section {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+  .stepper-vertical .step:last-child {
+    margin-bottom: 0;
   }
-  .GearList h1 {
-    font-size: 1.5rem;
-    gap: 24px;
+  .stepper-vertical .step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.1rem;
+    z-index: 1;
+    transition: background 0.2s, color 0.2s, border 0.2s;
   }
-  .gear-card img {
-    height: 160px;
+  .stepper-vertical .step.active .step-number {
+    background-color: #8bbe41;
+    border: 1px solid #8bbe41;
+    color: #fff;
   }
-  .cart-page {
-    padding: 18px 6px;
+  .stepper-vertical .step.completed .step-number {
+    background-color: #8bbe41;
+    border: 1px solid #8bbe41;
+    color: #fff;
   }
-  .cart-title {
-    font-size: 1.5rem;
+  .stepper-vertical .step-label {
+    font-weight: bold;
+    color: #363636;
+    margin-top: 3px;
   }
-  .cart-item {
-    padding: 12px 10px;
-    border-radius: 10px;
+  .stepper-vertical .step.active .step-label {
+    color: #8bbe41;
   }
-  .cart-img {
-    width: 55px;
-    height: 55px;
+  .stepper-vertical .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 32px;
+    width: 2px;
+    height: 40px;
+    background: #ccc;
+    z-index: 0;
   }
-  .cart-remove, .cart-checkout {
+
+  /* --- Form Card (Right Side) --- */
+  .checkout-form-container {
+    background: #f8fafc;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.08);
+    padding: 40px 30px 30px 30px;
+    min-width: 410px;
+    max-width: 500px;
+    margin: 0 60px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #d8dade;
+  }
+  .checkout-form-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #363636;
+    text-align: center;
+  }
+  .checkout-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-label {
     font-size: 1rem;
+    font-weight: 500;
+    color: #444;
+    margin-left: 70px;
+  }
+  .form-input, .form-select {
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: #fff;
+    color: #222;
+    outline: none;
+    margin: 0px auto;
+    margin-top: 8px;
+    width: calc(90% - 90px);
+    display: block;
+    transition: border 0.2s;
+  }
+  .form-input:focus, .form-select:focus {
+    border: 1.5px solid #8bbe41;
+  }
+  .form-error {
+    color: #ff4d4f;
+    font-size: 0.92rem;
+    margin-top: -0.3rem;
+    margin-left: 60px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .form-checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 60px;
+  }
+  .form-checkbox {
+    accent-color: #8bbe41;
+  }
+  .form-checkbox-label {
+    font-size: 0.97rem;
+    color: #555;
+  }
+  .checkout-form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .checkout-btn {
+    background: #273a7e;
+    color: #fff;
+    border: none;
+    border-radius: .375rem;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  }
+  .checkout-btn:disabled {
+    background: #d8dade;
+    color: #fff;
+    cursor: not-allowed;
+  }
+  .checkout-btn.secondary {
+    background: #f8fafc;
+    color: #273a7e;
+    border: 1px solid #ccc;
+  }
+  .checkout-btn.secondary:disabled {
+    background: #f8fafc;
+    color: #d8dade;
+    border: 1px solid #d8dade;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    .checkout-stepper-form {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .stepper-vertical {
+      min-width: 180px;
+      width: 100%;
+      padding: 1.5rem 1rem;
+      margin: 20px 0 0 0;
+    }
+    .checkout-form-container {
+      min-width: 0;
+      width: 100%;
+      padding: 1.5rem 0.7rem;
+      margin: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    .checkout-stepper-form {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+    }
+    .stepper-vertical {
+      min-width: 0;
+      width: 100%;
+      padding: 1rem 0.3rem;
+      box-shadow: none;
+      margin: 0;
+    }
+    .checkout-form-container {
+      min-width: 0;
+      width: 100%;
+      padding: 1rem 0.2rem;
+      box-shadow: none;
+      margin: 0;
+    }
+  }
     border-radius: 7px;
   }
   .gearlist-header {
