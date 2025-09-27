@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -93,6 +94,7 @@ const CartPage = ({ cart, setCart }: CartPageProps) => {
           </button>
         </>
       )}
+      <Footer />
     </div>
   );
 };

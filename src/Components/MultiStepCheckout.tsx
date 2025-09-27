@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 
 import React, { useMemo, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -203,10 +204,8 @@ export default function MultiStepCheckout() {
                 </>
               )}
 
-              
               {step === 1 && (
                 <>
-                  
                   {values.isMember && (
                     <div className="summary">
                       Kayıtlı adresiniz kullanılacak. İsterseniz yeni adres girebilirsiniz.
@@ -275,6 +274,7 @@ export default function MultiStepCheckout() {
           )}
         </Formik>
       </main>
+      <Footer />
     </div>
   );
 }

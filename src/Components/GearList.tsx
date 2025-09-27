@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../imagesSrc/logo.png";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import type { Product } from "../types/Product";
 import { dogProducts } from "../types/dogProducts";
 import { birdProducts } from "../types/birdProducts";
@@ -201,6 +202,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
           {dark ? "☀️ Aydınlık Moda Geç" : "🌙 Karanlık Moda Geç"}
         </button>
       </div>
+      <Footer />
     </div>
   );
 };
