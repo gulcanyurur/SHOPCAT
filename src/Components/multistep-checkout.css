@@ -70,7 +70,6 @@
   gap: 8px;
   margin-bottom: 12px;
 }
-/* Stepper: Sadece yuvarlak içi rakam, aralara boşluk */
 .steps ol {
   list-style: none;
   margin: 0;
@@ -101,7 +100,6 @@
   background: #fff;
 }
 
-/* Form inputları: Tek tip .input class */
 .input {
   width: 100%;
   border: 1px solid #e5e7eb;
@@ -148,7 +146,6 @@ body{background:#f6f6f6;color:var(--text);font-family:system-ui,Segoe UI,Roboto,
   margin:32px auto;
   display:grid;
   grid-template-columns:280px 1fr;
-  /* Ortak input/select/textarea stili */
   .input, .select, .textarea {
     width:100%;
     background:#fff;
@@ -215,7 +212,6 @@ body{background:#f6f6f6;color:var(--text);font-family:system-ui,Segoe UI,Roboto,
   max-width:560px;
   margin:0 auto;
 }
-/* Tüm form inputları (text, email, tel, password) aynı stil */
 .form-grid input[type="text"],
 .form-grid input[type="email"],
 .form-grid input[type="tel"],

@@ -101,7 +101,6 @@ export default function MultiStepCheckout() {
       }),
     }),
 
-    // STEP 3
     Yup.object({
       cardNumber: Yup.string().min(12, "Eksik").required("Zorunlu"),
       expiry: Yup.string().matches(/^\d{2}\/\d{2}$/, "MM/YY").required("Zorunlu"),
@@ -109,7 +108,6 @@ export default function MultiStepCheckout() {
       agree: Yup.boolean().oneOf([true], "Sözleşmeyi onaylayın"),
     }),
 
-    // STEP 4
     Yup.object({}),
   ];
 
@@ -152,7 +150,6 @@ export default function MultiStepCheckout() {
         >
           {({ validateForm, setTouched, values }) => (
             <Form className="form-grid">
-              {/* STEP 1 */}
               {step === 0 && (
                 <>
                   <div className="radio-row">
@@ -178,7 +175,6 @@ export default function MultiStepCheckout() {
                     </label>
                   </div>
 
-                  {/* Üyeyse giriş alanları */}
                   {values.isMember ? (
                     <>
                       <Field name="memberEmail" placeholder="E-posta (üye)" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
@@ -193,7 +189,6 @@ export default function MultiStepCheckout() {
                       <ErrorMessage name="memberPassword" component="span" className="err" />
                     </>
                   ) : (
-                    /* Üye değilse normal kişisel alanlar */
                     <>
                       <Field name="fullName" placeholder="Ad Soyad" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                       <ErrorMessage name="fullName" component="span" className="err" />
@@ -228,7 +223,6 @@ export default function MultiStepCheckout() {
                 </>
               )}
 
-              {/* STEP 3 */}
               {step === 2 && (
                 <>
                   <Field name="cardNumber" placeholder="Kart Numarası" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
@@ -248,7 +242,6 @@ export default function MultiStepCheckout() {
                 </>
               )}
 
-              {/* STEP 4 */}
               {step === 3 && (
                 <div className="summary">
                   <h3>Özet</h3>
@@ -258,7 +251,6 @@ export default function MultiStepCheckout() {
                 </div>
               )}
 
-              {/* Navigasyon */}
               <div className="nav">
                 {step > 0 && (
                   <button type="button" className="btn ghost" onClick={prev}>
