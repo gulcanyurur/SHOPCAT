@@ -20,9 +20,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
   const [category, setCategory] = useState("cat");
   const [search, setSearch] = useState("");
 
-  // Cart with quantity logic
   type CartItem = Product & { quantity: number };
-  // Convert cart to CartItem[] for display/logic
   const cartWithQty: CartItem[] = cart.reduce((acc: CartItem[], item) => {
     const found = acc.find((p) => p.id === item.id);
     if (found) {
@@ -34,10 +32,8 @@ const GearList = ({ cart, setCart }: GearListProps) => {
   }, []);
 
   const addToCart = (product: Product) => {
-    // If product already in cart, increase quantity
     const exists = cart.find((p) => p.id === product.id);
     if (exists) {
-      // Add a marker product (for legacy cart array), or just add again (for compatibility)
       setCart([...cart, product]);
     } else {
       setCart([...cart, product]);
@@ -127,13 +123,15 @@ const GearList = ({ cart, setCart }: GearListProps) => {
     children?: React.ReactNode;
   }) => (
     <article className="gear-card">
-      <img src={product.image} alt={product.name} />
-      <h2>{product.name} {children}</h2>
-      <h3>{product.brand}</h3>
-      <p>{product.description}</p>
-      <div style={{ fontWeight: 600, color: '#388e3c', marginBottom: 8 }}>
-        {product.price ? `${product.price} TL` : ''}
-      </div>
+      <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+        <img src={product.image} alt={product.name} />
+        <h2>{product.name} {children}</h2>
+        <h3>{product.brand}</h3>
+        <p>{product.description}</p>
+        <div style={{ fontWeight: 600, color: '#388e3c', marginBottom: 8 }}>
+          {product.price ? `${product.price} TL` : ''}
+        </div>
+      </Link>
       <button onClick={onAddToCart}>🛒 Sepete Ekle</button>
     </article>
   );
