@@ -43,21 +43,15 @@ const CartPage = ({ cart, setCart }: CartPageProps) => {
 
   const total = cartWithQty.reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0);
 
-  const [purchased, setPurchased] = React.useState(false);
-
+  const navigate = useNavigate();
   const handleBuy = () => {
-    setPurchased(true);
-    setCart([]);
+    navigate("/checkout", { state: { total } });
   };
 
   return (
     <div className="cart-page">
       <h2 className="cart-title">🛒 Sepetim</h2>
-      {purchased ? (
-        <div style={{ fontWeight: 600, color: '#388e3c', fontSize: 20, margin: '32px 0' }}>
-          Satın alma işleminiz başarıyla tamamlandı! Teşekkürler 🐾
-        </div>
-      ) : cartWithQty.length === 0 ? (
+      {cartWithQty.length === 0 ? (
         <p>Sepetiniz boş.</p>
       ) : (
         <>
