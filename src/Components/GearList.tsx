@@ -131,6 +131,8 @@ const GearList = ({ cart, setCart }: GearListProps) => {
         <div style={{ fontWeight: 600, color: '#388e3c', marginBottom: 8 }}>
           {product.price ? `${product.price} TL` : ''}
         </div>
+
+        
       </Link>
       <button onClick={onAddToCart}>🛒 Sepete Ekle</button>
     </article>
