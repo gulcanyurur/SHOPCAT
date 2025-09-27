@@ -181,25 +181,27 @@ export default function MultiStepCheckout() {
                   {/* Üyeyse giriş alanları */}
                   {values.isMember ? (
                     <>
-                      <Field name="memberEmail" placeholder="E-posta (üye)" />
+                      <Field name="memberEmail" placeholder="E-posta (üye)" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                       <ErrorMessage name="memberEmail" component="span" className="err" />
                       <Field
                         name="memberPassword"
                         type="password"
                         placeholder="Şifre"
+                        className="input"
+                        style={{ width: 320, height: 48, borderRadius: 16 }}
                       />
                       <ErrorMessage name="memberPassword" component="span" className="err" />
                     </>
                   ) : (
                     /* Üye değilse normal kişisel alanlar */
                     <>
-                      <Field name="fullName" placeholder="Ad Soyad" />
+                      <Field name="fullName" placeholder="Ad Soyad" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                       <ErrorMessage name="fullName" component="span" className="err" />
 
-                      <Field name="email" placeholder="E-posta" />
+                      <Field name="email" placeholder="E-posta" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                       <ErrorMessage name="email" component="span" className="err" />
 
-                      <Field name="phone" placeholder="Telefon" />
+                      <Field name="phone" placeholder="Telefon" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                       <ErrorMessage name="phone" component="span" className="err" />
                     </>
                   )}
@@ -215,13 +217,13 @@ export default function MultiStepCheckout() {
                       Kayıtlı adresiniz kullanılacak. İsterseniz yeni adres girebilirsiniz.
                     </div>
                   )}
-                  <Field name="address" placeholder="Adres" />
+                  <Field name="address" placeholder="Adres" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                   <ErrorMessage name="address" component="span" className="err" />
 
-                  <Field name="city" placeholder="Şehir" />
+                  <Field name="city" placeholder="Şehir" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                   <ErrorMessage name="city" component="span" className="err" />
 
-                  <Field name="zip" placeholder="Posta Kodu" />
+                  <Field name="zip" placeholder="Posta Kodu" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                   <ErrorMessage name="zip" component="span" className="err" />
                 </>
               )}
@@ -229,13 +231,13 @@ export default function MultiStepCheckout() {
               {/* STEP 3 */}
               {step === 2 && (
                 <>
-                  <Field name="cardNumber" placeholder="Kart Numarası" />
+                  <Field name="cardNumber" placeholder="Kart Numarası" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                   <ErrorMessage name="cardNumber" component="span" className="err" />
 
-                  <Field name="expiry" placeholder="Son Kullanım (MM/YY)" />
+                  <Field name="expiry" placeholder="Son Kullanım (MM/YY)" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                   <ErrorMessage name="expiry" component="span" className="err" />
 
-                  <Field name="cvv" placeholder="CVV" />
+                  <Field name="cvv" placeholder="CVV" className="input" style={{ width: 320, height: 48, borderRadius: 16 }} />
                   <ErrorMessage name="cvv" component="span" className="err" />
 
                   <label className="check">

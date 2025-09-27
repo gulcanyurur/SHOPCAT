@@ -19,8 +19,28 @@ const GearList = ({ cart, setCart }: GearListProps) => {
   const [category, setCategory] = useState("cat");
   const [search, setSearch] = useState("");
 
+  // Cart with quantity logic
+  type CartItem = Product & { quantity: number };
+  // Convert cart to CartItem[] for display/logic
+  const cartWithQty: CartItem[] = cart.reduce((acc: CartItem[], item) => {
+    const found = acc.find((p) => p.id === item.id);
+    if (found) {
+      found.quantity += 1;
+    } else {
+      acc.push({ ...item, quantity: 1 });
+    }
+    return acc;
+  }, []);
+
   const addToCart = (product: Product) => {
-    setCart([...cart, product]);
+    // If product already in cart, increase quantity
+    const exists = cart.find((p) => p.id === product.id);
+    if (exists) {
+      // Add a marker product (for legacy cart array), or just add again (for compatibility)
+      setCart([...cart, product]);
+    } else {
+      setCart([...cart, product]);
+    }
   };
 
   
@@ -93,13 +113,15 @@ const GearList = ({ cart, setCart }: GearListProps) => {
   const Gear = ({
     product,
     onAddToCart,
+    children,
   }: {
     product: Product;
     onAddToCart: () => void;
+    children?: React.ReactNode;
   }) => (
     <article className="gear-card">
       <img src={product.image} alt={product.name} />
-      <h2>{product.name}</h2>
+      <h2>{product.name} {children}</h2>
       <h3>{product.brand}</h3>
       <p>{product.description}</p>
       <button onClick={onAddToCart}>🛒 Sepete Ekle</button>
@@ -135,15 +157,28 @@ const GearList = ({ cart, setCart }: GearListProps) => {
             className="search-box"
           />
           <Link to="/cart">
-            🛒 Sepet: <b>{cart.length}</b> ürün
+            🛒 Sepet: <b>{cartWithQty.reduce((sum, p) => sum + p.quantity, 0)}</b> ürün
           </Link>
         </div>
       </div>
       <Navbar setCategory={setCategory} />
       <section className="product-grid">
-        {filteredProducts.map((p) => (
-          <Gear key={p.id} product={p} onAddToCart={() => addToCart(p)} />
-        ))}
+        {filteredProducts.map((p) => {
+          const inCart = cartWithQty.find((item) => item.id === p.id);
+          return (
+            <Gear
+              key={p.id}
+              product={p}
+              onAddToCart={() => addToCart(p)}
+            >
+              {inCart && inCart.quantity > 1 && (
+                <span style={{ fontWeight: 600, color: '#d81b60', marginLeft: 4 }}>
+                  {inCart.quantity}x
+                </span>
+              )}
+            </Gear>
+          );
+        })}
       </section>
       <div
         style={{

@@ -1,3 +1,64 @@
+/* Cart quantity controls */
+.cart-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+.cart-qty-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cart-qty-btn:hover {
+  background: #d81b60;
+}
+.cart-qty {
+  font-weight: 600;
+  min-width: 32px;
+  text-align: center;
+  color: #d81b60;
+}
+
+body.dark-mode .cart-qty-btn {
+  background: #444;
+  color: #fff;
+}
+body.dark-mode .cart-qty-btn:hover {
+  background: #d81b60;
+}
+body.dark-mode {
+  background: #181824 !important;
+  color: #f3f3f3 !important;
+  transition: background 0.3s, color 0.3s;
+}
+.dark-mode .gear-card, .dark-mode .cart-item, .dark-mode .checkout-form, .dark-mode .GearList, .dark-mode .large {
+  background: #232336 !important;
+  color: #f3f3f3 !important;
+  border-color: #333 !important;
+}
+.dark-mode .gear-card button, .dark-mode .cart-remove, .dark-mode .cart-checkout {
+  background: #c0117a !important;
+  color: #fff !important;
+}
+.dark-mode .gear-card button:hover, .dark-mode .cart-remove:hover, .dark-mode .cart-checkout:hover {
+  background: #d81b60 !important;
+}
+.dark-mode .search-box {
+  background: #232336 !important;
+  color: #f3f3f3 !important;
+  border-color: #333 !important;
+}
+.dark-mode .search-box:focus {
+  border-color: #d81b60 !important;
+  box-shadow: 0 0 4px #d81b60;
+}
 /* STEPPER & CHECKOUT FORM */
 .checkout-form {
   max-width: 420px;
