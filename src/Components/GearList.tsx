@@ -45,13 +45,13 @@ const GearList = ({ cart, setCart }: GearListProps) => {
 
   
   const bestsellers: Product[] = [
-    { id: 1, category: "cat", image: "/KedimMaması.jpg", name: "Kedi Maması", brand: "Royal Canin", description: "Yetişkin kediler için tam besleyici mama" },
-    { id: 7, category: "dog", image: "/KopekMaması.jpg", name: "Köpek Maması", brand: "ProPlan", description: "Yetişkin köpekler için mama" },
-    { id: 202, category: "bird", image: "/KuşKafesi.jpg", name: "Kuş Kafesi", brand: "Ferplast", description: "Dayanıklı ve geniş kuş kafesi" },
-    { id: 302, category: "fish", image: "/Akvaryum.jpg", name: "Akvaryum", brand: "AquaWorld", description: "Cam ve dayanıklı akvaryum" },
-    { id: 401, category: "horse", image: "/AtYemi.jpg", name: "At Yemi", brand: "HorseFeed", description: "Vitamin ve mineralli at yemi" },
-    { id: 501, category: "rabbit", image: "/TavsanYemi.jpg", name: "Tavşan Yemi", brand: "BunnyFood", description: "Vitaminli ve doğal tavşan yemi" },
-    { id: 601, category: "Civciv", image: "/CivcivYemi.jpg", name: "Civciv Yemi", brand: "ChickFeed", description: "Büyüme destekli civciv yemi" },
+    { id: 1, category: "cat", image: "/KedimMaması.jpg", name: "Kedi Maması", brand: "Royal Canin", description: "Yetişkin kediler için tam besleyici mama", price: 350 },
+    { id: 7, category: "dog", image: "/KopekMaması.jpg", name: "Köpek Maması", brand: "ProPlan", description: "Yetişkin köpekler için mama", price: 400 },
+    { id: 202, category: "bird", image: "/KuşKafesi.jpg", name: "Kuş Kafesi", brand: "Ferplast", description: "Dayanıklı ve geniş kuş kafesi", price: 600 },
+    { id: 302, category: "fish", image: "/Akvaryum.jpg", name: "Akvaryum", brand: "AquaWorld", description: "Cam ve dayanıklı akvaryum", price: 1200 },
+    { id: 401, category: "horse", image: "/AtYemi.jpg", name: "At Yemi", brand: "HorseFeed", description: "Vitamin ve mineralli at yemi", price: 800 },
+    { id: 501, category: "rabbit", image: "/TavsanYemi.jpg", name: "Tavşan Yemi", brand: "BunnyFood", description: "Vitaminli ve doğal tavşan yemi", price: 200 },
+    { id: 601, category: "Civciv", image: "/CivcivYemi.jpg", name: "Civciv Yemi", brand: "ChickFeed", description: "Büyüme destekli civciv yemi", price: 150 },
   ];
   const products: Product[] = [
     {
@@ -61,6 +61,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
       name: "Kedi Maması",
       brand: "Royal Canin",
       description: "Yetişkin kediler için tam besleyici mama",
+      price: 350,
     },
     {
       id: 2,
@@ -69,6 +70,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
       name: "Kedi Kumu",
       brand: "Ever Clean",
       description: "Topaklanan ve kokuyu hapseden kedi kumu",
+      price: 120,
     },
     {
       id: 3,
@@ -77,6 +79,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
       name: "Kedi Oyuncağı",
       brand: "PetLove",
       description: "Eğlenceli tüylü oyuncak",
+      price: 60,
     },
     {
       id: 4,
@@ -85,6 +88,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
       name: "Tırmalama Tahtası",
       brand: "CatTree",
       description: "Kedinizin tırnak sağlığı için ideal",
+      price: 250,
     },
     {
       id: 5,
@@ -93,6 +97,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
       name: "Taşıma Çantası",
       brand: "PawSafe",
       description: "Hava alan ve rahat taşıma çantası",
+      price: 180,
     },
     {
       id: 6,
@@ -101,6 +106,7 @@ const GearList = ({ cart, setCart }: GearListProps) => {
       name: "Kedi Yatağı",
       brand: "SoftPet",
       description: "Yumuşak ve rahat kedi yatağı",
+      price: 220,
     },
   ...dogProducts,
   ...birdProducts,
@@ -124,6 +130,9 @@ const GearList = ({ cart, setCart }: GearListProps) => {
       <h2>{product.name} {children}</h2>
       <h3>{product.brand}</h3>
       <p>{product.description}</p>
+      <div style={{ fontWeight: 600, color: '#388e3c', marginBottom: 8 }}>
+        {product.price ? `${product.price} TL` : ''}
+      </div>
       <button onClick={onAddToCart}>🛒 Sepete Ekle</button>
     </article>
   );

@@ -1,4 +1,5 @@
 
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Product } from "../types/Product";
 
@@ -8,7 +9,7 @@ type CartPageProps = {
 };
 
 const CartPage = ({ cart, setCart }: CartPageProps) => {
-  // Aggregate cart items by id and count quantity
+ 
   type CartItem = Product & { quantity: number };
   const cartWithQty: CartItem[] = cart.reduce((acc: CartItem[], item) => {
     const found = acc.find((p) => p.id === item.id);
@@ -20,12 +21,11 @@ const CartPage = ({ cart, setCart }: CartPageProps) => {
     return acc;
   }, []);
 
-  // Remove all of a product from cart
   const handleRemove = (id: number) => {
     setCart(cart.filter((item) => item.id !== id));
   };
 
-  // Decrease quantity by 1
+ 
   const handleDecrease = (id: number) => {
     const idx = cart.findIndex((item) => item.id === id);
     if (idx !== -1) {
@@ -35,20 +35,28 @@ const CartPage = ({ cart, setCart }: CartPageProps) => {
     }
   };
 
-  // Increase quantity by 1 (add one more of the product)
   const handleIncrease = (product: Product) => {
     setCart([...cart, product]);
   };
 
-  const navigate = useNavigate();
-  const handleCheckout = () => {
-    navigate("/checkout");
+
+  const total = cartWithQty.reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0);
+
+  const [purchased, setPurchased] = React.useState(false);
+
+  const handleBuy = () => {
+    setPurchased(true);
+    setCart([]);
   };
 
   return (
     <div className="cart-page">
       <h2 className="cart-title">🛒 Sepetim</h2>
-      {cartWithQty.length === 0 ? (
+      {purchased ? (
+        <div style={{ fontWeight: 600, color: '#388e3c', fontSize: 20, margin: '32px 0' }}>
+          Satın alma işleminiz başarıyla tamamlandı! Teşekkürler 🐾
+        </div>
+      ) : cartWithQty.length === 0 ? (
         <p>Sepetiniz boş.</p>
       ) : (
         <>
@@ -59,6 +67,9 @@ const CartPage = ({ cart, setCart }: CartPageProps) => {
                   <img src={item.image} alt={item.name} className="cart-img" />
                   <div>
                     <b>{item.name}</b> - {item.brand}
+                    <div style={{ color: '#388e3c', fontWeight: 600, fontSize: 15 }}>
+                      {item.price ? `${item.price} TL` : ''}
+                    </div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -74,7 +85,10 @@ const CartPage = ({ cart, setCart }: CartPageProps) => {
               </li>
             ))}
           </ul>
-          <button onClick={handleCheckout} className="cart-checkout">
+          <div style={{ textAlign: 'right', fontWeight: 700, fontSize: 18, margin: '16px 0', color: '#d81b60' }}>
+            Toplam: {total} TL
+          </div>
+          <button onClick={handleBuy} className="cart-checkout">
             Satın Al
           </button>
         </>
