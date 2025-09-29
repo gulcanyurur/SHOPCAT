@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import logo from "../imagesSrc/logo.png";
@@ -152,9 +152,20 @@ const GearList = ({ cart, setCart }: GearListProps) => {
 
   const [dark, setDark] = useState(false);
   const toggleDark = () => {
+    console.log("Toggling dark mode");
     setDark((prev) => !prev);
-    document.body.classList.toggle("dark-mode");
   };
+
+  useEffect(() => {
+    if (dark) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+    return () => {
+      document.body.classList.remove("dark-mode");
+    };
+  }, [dark]);
 
   const [aboutOpen, setAboutOpen] = useState(false);
 
