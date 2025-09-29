@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import logo from "../imagesSrc/logo.png";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import About from "./About";
+import "./AboutModal.css";
 import type { Product } from "../types/Product";
 import { dogProducts } from "../types/dogProducts";
 import { birdProducts } from "../types/birdProducts";
@@ -153,6 +156,9 @@ const GearList = ({ cart, setCart }: GearListProps) => {
     document.body.classList.toggle("dark-mode");
   };
 
+  const [aboutOpen, setAboutOpen] = useState(false);
+
+  
   return (
     <div className="GearList">
       <div className="gearlist-header">
@@ -166,9 +172,34 @@ const GearList = ({ cart, setCart }: GearListProps) => {
             onChange={(e) => setSearch(e.target.value)}
             className="search-box"
           />
-          <Link to="/cart">
-            🛒 Sepet: <b>{cartWithQty.reduce((sum, p) => sum + p.quantity, 0)}</b> ürün
-          </Link>
+          <div style={{ display: 'inline-block', position: 'relative' }}>
+            <Link to="/cart" style={{ zIndex: 2, position: 'relative' }}>
+              🛒 Sepet: <b>{cartWithQty.reduce((sum, p) => sum + p.quantity, 0)}</b> ürün
+            </Link>
+            <button
+              style={{ marginLeft: 8, background: '#388e3c', color: '#fff', border: 'none', borderRadius: 6, padding: '2px 10px', cursor: 'pointer', fontSize: 14 }}
+              onClick={() => setAboutOpen(true)}
+            >
+              Hakkımızda
+            </button>
+            {aboutOpen && createPortal(
+              <div
+                className="about-modal-backdrop"
+                style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1000 }}
+                onClick={() => setAboutOpen(false)}
+              >
+                <div
+                  className="about-modal"
+                  style={{ position: 'fixed', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', minWidth: 520, maxWidth: 760, width: '99vw', maxHeight: '420px', overflowY: 'auto', transition: 'none' }}
+                  onClick={e => e.stopPropagation()}
+                >
+                  <button className="about-modal-close" onClick={() => setAboutOpen(false)}>&times;</button>
+                  <About />
+                </div>
+              </div>,
+              document.body
+            )}
+          </div>
         </div>
       </div>
       <Navbar setCategory={setCategory} />
