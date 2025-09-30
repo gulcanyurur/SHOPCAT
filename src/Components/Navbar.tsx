@@ -91,9 +91,7 @@ const Navbar = ({ setCategory }: NavbarProps) => {
           </button>
         </li>
       </ul>
-      <div className="navbar-banner">
-        <span>% Günlük ihtiyaçlarda sepette %15 indirim %</span>
-      </div>
+     
     </nav>
   );
 };
