@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
 import GearList from "./Components/GearList";
 import CartPage from "./Components/CartPage";
 import MultiStepCheckout from "./Components/MultiStepCheckout";
+import LiveChat from "./Components/LiveChat";
 import type { Product } from "./types/Product";
 
 
@@ -25,6 +27,7 @@ const App = () => {
         <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
         <Route path="/checkout" element={<MultiStepCheckout />} />
       </Routes>
+      <LiveChat />
     </Router>
   );
 };
